@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ChartBars extends StatelessWidget {
-  final label;
+  final dynamic label;
   final double amountExpenses;
   final double totalExpenses;
   const ChartBars(this.label, this.amountExpenses, this.totalExpenses,
@@ -12,6 +12,7 @@ class ChartBars extends StatelessWidget {
     return LayoutBuilder(builder: (expn, constraints){
       return Column(
         children: [
+          //Used for functionality instead of following ide suggestion to use SizedBox
           Container(
             height: constraints.maxHeight *0.14,
             child: FittedBox(
@@ -24,9 +25,11 @@ class ChartBars extends StatelessWidget {
               ),
             ),
           ),
+           //Creating space
            SizedBox(
             height: constraints.maxHeight *0.010,
           ),
+          //Used for functionality instead of following ide suggestion to use SizedBox
           Container(
             height: constraints.maxHeight *0.6,
             width: 10,
@@ -52,6 +55,7 @@ class ChartBars extends StatelessWidget {
            SizedBox(
             height: constraints.maxHeight *0.1,
           ),
+          //Used for functionality instead of following ide suggestion to use SizedBox
           Container(
             height: constraints.maxHeight *0.15,
             child: FittedBox(

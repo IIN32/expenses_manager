@@ -69,6 +69,8 @@ class TransactionList extends StatelessWidget {
                     trailing: IconButton(onPressed:() => deleteExpenses(transactions[index].id),icon: const Icon(Icons.delete,color: Colors.red,)),
                   ),
                 );
+
+                // KEPT FOR REFERENCE
                 // return Card(
                 //   child: Row(
                 //     children: [
