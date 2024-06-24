@@ -25,7 +25,10 @@ class _NewTransactionState extends State<NewTransaction> {
     var expensesTitle = _inputTitleController.text;
     var expensesAmount = double.parse(_inputAmountController.text);
     if (expensesTitle.isEmpty ||
-        expensesAmount <= 0) {
+        expensesAmount <= 0
+        // ||
+        // _chosenExpDate == null
+    ) {
       return;
     }
     widget.addExp(expensesTitle, expensesAmount, _chosenExpDate);
@@ -39,6 +42,9 @@ class _NewTransactionState extends State<NewTransaction> {
             firstDate: DateTime(2022),
             lastDate: DateTime.now())
         .then((chosedExpDate) {
+      // if (_chosenExpDate == null) {
+      //   return;
+      // }
       setState(() {
         _chosenExpDate = chosedExpDate as DateTime;
       });
@@ -88,9 +94,11 @@ class _NewTransactionState extends State<NewTransaction> {
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(_chosenExpDate == null
-                          ? 'No date chosen!'
-                          : DateFormat.yMd().format(_chosenExpDate)),
+                      Text(
+                          // _chosenExpDate == null
+                          // ? 'No date chosen!'
+                          // :
+                          DateFormat.yMd().format(_chosenExpDate)),
                       TextButton(
                         // style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.blue)),
                         onPressed: _expensesDate,
