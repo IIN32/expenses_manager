@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../models/transaction.dart';
-import '../widgets/user_transaction.dart';
-
 class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
   final Function deleteExpenses;
@@ -12,6 +10,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var mediaQuery=MediaQuery.of(context);
+    //using container for flexibility at that time
     return Container(
       height: mediaQuery.size.height * 0.6,
       child: transactions.isEmpty
@@ -26,6 +25,7 @@ class TransactionList extends StatelessWidget {
                       TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
                 ),
                 const SizedBox(height: 20),
+                //using container for flexibility at that time
                 Container(
                     height: mediaQuery.size.height * 0.3,
                     child: Image.asset(
